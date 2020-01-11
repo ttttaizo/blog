@@ -7,7 +7,7 @@ from django.contrib.admin.options import (
 # Register your models here.
 class BlogAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'content', 'created_datetime', 'updated_datetime')
-    list_display_link = ('id', 'title')
+    list_display_links = ('id', 'title')
 
 admin.site.register(BlogModel, BlogAdmin)
     

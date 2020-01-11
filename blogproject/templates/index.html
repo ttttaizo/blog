@@ -22,11 +22,11 @@ Python初学者向けブログ｜Taizoブログ
     {% for post in blogs %}
     <!-- Blog Post -->
     <div class="card mb-4">
-      <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+      <!-- <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap"> -->
       <div class="card-body">
         <h2 class="card-title">{{ post.title }}</h2>
         <p class="card-text">{{ post.content }}</p>
-        <a href="#" class="btn btn-primary">もっと読む →</a>
+        <a href="{% url 'detail' pk=post.id %}" class="btn btn-primary">もっと読む →</a>
       </div>
       <div class="card-footer text-muted">
         {{ post.updated_datetime }} by
