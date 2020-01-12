@@ -2,7 +2,9 @@
 
 {% block content %}
 <form class="col-md-4" action="" method="POST">{% csrf_token %}
-    {{ form.as_p }}
+    <table>
+        {{ form.as_table }}
+    </table>
     <input type="submit" value="作成する">
 </form>
 

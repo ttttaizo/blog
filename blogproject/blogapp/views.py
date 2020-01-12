@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, DetailView, CreateView
 from .models import BlogModel
-from django.urls import reverse_lazy
+from django.urls import reverse, reverse_lazy
 
 # Create your views here.
 def index(request):
@@ -16,4 +16,7 @@ class BlogCreate(CreateView):
     template_name = 'create.html'
     model = BlogModel
     fields = {'title', 'content'}
-    success_url = reverse_lazy('index')
+    #詳細画面に遷移させる
+    def get_success_url(self):
+        return reverse('detail', kwargs={'pk': self.object.pk})
+    # success_url = reverse_lazy('index')
